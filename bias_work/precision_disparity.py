@@ -4,7 +4,7 @@ from typing import List, Optional, Dict, Any
 import matplotlib.pyplot as plt
 
 
-class PrecisionDisparityAnalyzer:
+class PrecisionDisparityAnalyser:
     """
     Compute precision by subgroup and derive:
       - relative disparity ratios  (precision / reference precision)
