@@ -10,7 +10,7 @@ It will:
 """
 
 from bias_work.create_syn_dataset import generate_synthetic_linkage_data
-from bias_work.precision_disparity import PrecisionDisparityAnalyzer
+from bias_work.precision_disparity import PrecisionDisparityAnalyser
 
 
 def main() -> None:
@@ -30,7 +30,7 @@ def main() -> None:
     # --------------------------------------------------------
     # 2. Run precision disparity analysis
     # --------------------------------------------------------
-    analyzer = PrecisionDisparityAnalyzer(
+    analyser = PrecisionDisparityAnalyser(
         df=df,
         truth_col="link_truth",
         group_vars=["sex", "age_band", "ethnicity", "id_quality"],
@@ -38,13 +38,13 @@ def main() -> None:
         dropna_groups=True,   # drop rows with missing group values
     )
 
-    results = analyzer.run()
+    results = analyser.run()
 
     # --------------------------------------------------------
     # 3. Print summary + first rows of results
     # --------------------------------------------------------
     print("\n=== Precision disparity summary ===")
-    print(analyzer.summary())
+    print(analyser.summary())
 
     print("\n=== Head of results table (first 20 rows) ===")
     print(results.head(20))
